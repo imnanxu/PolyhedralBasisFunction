@@ -18,7 +18,7 @@ Software in Mathematica has been written to compute the coeffcients c_{p,l,n,j,m
  (b) Run BasisRealFunctionCoeffMatrixT[l ,m ,p ] which computes the coefficients for c_{p=p_,l=l_,n,j,m=m_}. 
 Note, only the p = 1 and p = 4 irreps are real valued and lead to real-valued functions.
  
-Get the value for polyhedral basis functions:
+Get the value for basis functions for a polyhedral group:
 1. Example: The coefficients for the Icosahedral group generated from above with 0<=l<=45: IcosahedralRealBasisFunctionCoeff.txt
 2. The Matlab that reads the coefficients .txt file: read_coefficients.m
 3. The Matlab that computes the basis function values: demonstrate get Fplnj.m and get Fplnj.m. 
