@@ -105,7 +105,7 @@ If[Chop[MWigD.y-Ry,\[Epsilon]]!=ConstantArray[0, 2l+1], Print[{l, MWigD.y, Ry}]]
 
 (*Spherical Harmonics*)
 Clear[d]
-Y[x_,l_,m_]:=( r=Sqrt[x[[1]]^2+x[[2]]^2+x[[3]]^2];  \[Theta]=ArcCos[x[[3]]/r];\[Phi]=ArcTan[x[[1]],x[[2]]] ;SphericalHarmonicY[l,m,\[Theta],\[Phi]])
+Y[x_,l_,m_]:=( r=Sqrt[x[[1]]^2+x[[2]]^2+x[[3]]^2];  \[Theta]=ArcCos[x[[3]]/r];\[Phi]=ArcTan[x[[1]],x[[2]]]; SphericalHarmonicY[l,m,\[Theta],\[Phi]])
 (*D coefficiets*)
 powerFunc=Unevaluated[#1^#2]/.HoldPattern[0^0]:>1&;
 d[l_,mp_,m_,\[Beta]_]:=Sqrt[(l+m)!*(l-m)!*(l+mp)!*(l-mp)!]*Sum[(-1)^k/((l-mp-k)!*(l+m-k)!*(k+mp-m)!*k!)*powerFunc[(Cos[\[Beta]/2]),(2l+m-mp-2k)]*powerFunc[(-Sin[\[Beta]/2]),(mp-m+2k)],{k,Max[0,(m-mp)],Min[(l-mp),(l+m)]}]
@@ -140,3 +140,21 @@ BasisRealFunctionCoeffMatrixT[l_,m_,p_]:=(Mat=BasisFunctionMatrixT[l,m,p];
 		For[i=1,i<=Length[rh],i++,If[lh[[i]]==0,Continue[],Break[]];];
 		If[i<= Length[rh], angle=Log[rh[[i]]/lh[[i]]]/2];
 	MatNew=Exp[angle]*Mat)
+
+
+(*Test 1: generate the basis function for the random point x\in R^3*)
+p=4;  x={0.373427501,0.270872246,0.10308654}; 
+
+For[l=1, l<=10, l++, 
+	Print[l];
+	y=Table[Y[x,l,m],{m,-l,l}];
+	Mat0={};
+	For[m=-l, m<=l, m++,
+		(*Mattest=Chop[BasisFunctionMatrixT[l, m, p]];*)
+		Mattest=Chop[BasisRealFunctionCoeffMatrixT[l, m, p]];
+		Mat0=Join[Mat0, Mattest];
+	];
+	Mat0orth=Select[Chop[Orthogonalize[Mat0]],#!=ConstantArray[0,2*(l)+1]&];
+	Print[MatrixForm[Mat0orth]] (* the Orthogonalized coefficient matrix for degree l*)
+	Print[Chop[Mat0orth . y]] (* the Orthogonalized basis functions for the spatial point x*)
+]
