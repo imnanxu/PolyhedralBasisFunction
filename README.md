@@ -21,4 +21,4 @@ Note, only the p = 1 and p = 4 irreps are real valued and lead to real-valued fu
 Get the value for basis functions for a polyhedral group:
 1. Example: The coefficients for the Icosahedral group generated from above with 0<=l<=45: IcosahedralRealBasisFunctionCoeff.txt
 2. The Matlab that reads the coefficients .txt file: read_coefficients.m
-3. The Matlab that computes the basis function values F_{p,l,n,j}(\theta;\phi) in [1, Eq. 8]: demonstrate get Fplnj.m and get Fplnj.m. 
+3. The Matlab that computes the basis function values F_{p,l,n,j}(\theta;\phi) in [1, Eq. 9]: demonstrate get Fplnj.m and get Fplnj.m. 
