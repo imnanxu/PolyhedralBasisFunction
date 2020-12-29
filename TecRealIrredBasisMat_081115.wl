@@ -147,7 +147,7 @@ p=4;  x={0.373427501,0.270872246,0.10308654};
 
 For[l=1, l<=10, l++, 
 	Print[l];
-	y=Table[Y[x,l,m],{m,-l,l}];
+	y=Table[Y[x,l,m],{m,-l,l}]; (* Spherical harmonics for the spatial point x at degree l*)
 	Mat0={};
 	For[m=-l, m<=l, m++,
 		(*Mattest=Chop[BasisFunctionMatrixT[l, m, p]];*)
