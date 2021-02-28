@@ -18,7 +18,7 @@ I. Software in Mathematica has been written to compute the coeffcients c_{p,l,n,
  (b) Run BasisRealFunctionCoeffMatrixT[l_,m_,p_] which computes the coefficients for c_{p=p_,l=l_,n,j,m=m_}. 
 Note, only the p = 1 and p = 4 irreps are real valued and lead to real-valued functions.
 
-One solution of real-valued irrep matrices for each group is included as "RealIrreps_T.txt" for the tetrahedral group, "RealIrreps_O.txt" for the octahedral group, and "RealIrreps_I.txt" for the icosahedral group.
+One solution of real-valued irrep matrices for each group is included as "RealIrreps_T.txt" for the tetrahedral group, "RealIrreps_O.txt" for the octahedral group, and "RealIrreps_I.txt" for the icosahedral group. A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} is demonstrated by {{a,b},{c,d}} in these three files.
 
  
 II. Get the value for basis functions for a polyhedral group:
