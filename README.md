@@ -3,7 +3,7 @@ Matlab and Mathematica Software for computing the complete basis function for th
 
 [1] Xu, Nan, and Peter C. Doerschuk. "Computation of real basis functions for the 3-D rotational polyhedral groups T, O, and I." arXiv preprint arXiv:1701.01348 (2017).
 
-I. Software in Mathematica has been written to compute the coeffcients c_{p,l,n,j,m} in [1, Eq. 9] which define the symmetrical basis in terms of spherical harmonics. 
+I. Software in Mathematica has been written to compute the coeffcients $\boldsymbol{\hat\calH}_{l,n}^p$ in [1, Eq. 6.10] which define the symmetrical basis in terms of spherical harmonics. 
 1. For icosahedral symmetry: In sequence,
  (a) Run LiuPingChen_toUnitaryReal_1012.m.
  (b) Run OthoBasisFunctionRealirre_1012.m.
