@@ -20,8 +20,10 @@ Note, only the p = 1 and p = 4 irreps are real valued and lead to real-valued fu
 
 II. Numerical solution:
 Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included:
-1. Real irrep matrices: "RealIrreps_T.txt", "RealIrreps_O.txt", and "RealIrreps_I.txt" for groups T, O and I, respectively. A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} is demonstrated in the form of {{a,b},{c,d}} in these three files.
-2. Spherical harmonics coeffcients ${\hat\calH}_{l,n}^p$ in [1, Eq. 6.10] that construct a real basis:
+1. Real irrep matrices: "RealIrreps_T.txt", "RealIrreps_O.txt", and "RealIrreps_I.txt" for groups T, O and I, respectively.
+ (*A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} is demonstrated in the form of {{a,b},{c,d}} in these three files.*)
+2. Spherical harmonics coeffcients ${\hat\calH}_{l,n}^p$ in [1, Eq. 6.10] that construct a real basis: "BasisCoeff_T.txt" (for T), "BasisCoeff_O.txt" (for O), "BasisCoeff_I.txt" (for I).
+(*The coefficient matrices {{\hat\calH}_{l,n=1}^p, ..., {\hat\calH}_{l,n=N_{p;l}}^p} are listed after a line of l value and a line of p value.*)
 
  
 III. Get the value for basis functions for a polyhedral group:
