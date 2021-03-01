@@ -26,7 +26,7 @@ Note that the solution of real irrep matrices and coefficients are not unique as
 (*The coefficient matrices {{\hat\calH}_{l,n=1}^p, ..., {\hat\calH}_{l,n=N_{p;l}}^p} are listed after a line of l value and a line of p value.*)
 
  
-III. Get the value for basis functions for a polyhedral group:
+III. Get the value for basis functions for a polyhedral group in Matlab:
 1. Example: The coefficients for the Icosahedral group generated from above with 0<=l<=45: IcosahedralRealBasisFunctionCoeff.txt
 2. The Matlab that reads the coefficients .txt file: read_coefficients.m
 3. The Matlab that computes the basis function values F_{p,l,n,j}(\theta;\phi) in [1, Eq. 9]: demonstrate_get_Fplnj.m and get_Fplnj.m. 
