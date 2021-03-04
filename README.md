@@ -18,7 +18,7 @@ Note that the solution of real irrep matrices and coefficients are not unique as
  2. Spherical harmonics coeffcients matrix \hat{H}_l^p for l=0,...,100: "BasisCoeff_T.txt", "BasisCoeff_O.txt", "BasisCoeff_I.txt"\
 (*File format: a line of 'l' value, a line of 'p' value, and then a line of coefficient matrix '\hat{H}_l^p'.*)
  3. Real basis functions {F}_{l}^p(\[Theta], \[Phi]) at randomly selected (\[Theta], \[Phi])'s for l=0,...,100: "RealBasisTest_T.txt", "RealBasisTest_O.txt", and "RealBasisTest_I.txt".\
-(*File format: a line of 'l' value, a line of 'p' value, and then a line of '{\[Theta], \[Phi]}\t {F}_{l}^p(\[Theta], \[Phi])'.*)
+(*File format: a line of 'l' value, a line of 'p' value, and then a line of '{\[Theta], \[Phi]}     {F}_{l}^p(\[Theta], \[Phi])'.*)
 
 III. Obtain real basis functions in MATLAB:
 MATLAB functions are also developed to read the coefficients file (i.e., read_coefMat.m for "BasisCoeff_*.txt") and then to compute the real basis functions (i.e., demonstrate_get_Fplnj.m and get_Fplnj.m). 
