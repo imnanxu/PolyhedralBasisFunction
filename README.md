@@ -13,11 +13,11 @@ The final real basis functions can be obtained by multiplying each row of \bolds
 
 II. Numerical solution:
 Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included ("*_T.txt" for the tetrahedral group, "*_O.txt" for the octahedral group, and "*_I.txt" for the icosahedral group):
- 1. Real irrep matrices: "RealIrreps_T.txt", "RealIrreps_O.txt", and "RealIrreps_I.txt"\n
+ 1. Real irrep matrices: "RealIrreps_T.txt", "RealIrreps_O.txt", and "RealIrreps_I.txt"\
 (*A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} has the form of {{a,b},{c,d}} in these files.*)
- 2. Spherical harmonics coeffcients matrix \hat{H}_l^p for l=0,...,100: "BasisCoeff_T.txt", "BasisCoeff_O.txt", "BasisCoeff_I.txt"\n
-(*File format: a line of 'l' value, a line of 'p' value, and then a line of coefficient matrix '\hat{H}_l^p'.*)\n
- 3.Real basis functions {F}_{l}^p(\[Theta], \[Phi]) at randomly selected (\[Theta], \[Phi])'s for l=0,...,100: "RealBasisTest_T.txt", "RealBasisTest_O.txt", and "RealBasisTest_I.txt".\n
+ 2. Spherical harmonics coeffcients matrix \hat{H}_l^p for l=0,...,100: "BasisCoeff_T.txt", "BasisCoeff_O.txt", "BasisCoeff_I.txt"\
+(*File format: a line of 'l' value, a line of 'p' value, and then a line of coefficient matrix '\hat{H}_l^p'.*)\
+ 3.Real basis functions {F}_{l}^p(\[Theta], \[Phi]) at randomly selected (\[Theta], \[Phi])'s for l=0,...,100: "RealBasisTest_T.txt", "RealBasisTest_O.txt", and "RealBasisTest_I.txt".\
 (*File format: a line of 'l' value, a line of 'p' value, and then a line of '{(\[Theta], \[Phi]}   {F}_{l}^p(\[Theta], \[Phi])'.*)
 
 III. Obtain real basis functions in MATLAB:
