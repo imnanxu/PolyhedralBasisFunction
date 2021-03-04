@@ -15,13 +15,10 @@ II. Numerical solution:
 Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included:
  1. Real irrep matrices: "RealIrreps_T.txt", "RealIrreps_O.txt", and "RealIrreps_I.txt" for groups T, O and I, respectively.
 (*A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} has the form of {{a,b},{c,d}} in these files.*)
-
  2. Spherical harmonics coeffcients matrix \hat{H}_l^p for l=0,...,100: "BasisCoeff_T.txt" (for T), "BasisCoeff_O.txt" (for O), "BasisCoeff_I.txt" (for I).
 (*File format: a line of 'l' value, a line of 'p' value, and then a line of coefficient matrix '\hat{H}_l^p'.*)
-
  3.Real basis functions {F}_{l}^p(\[Theta], \[Phi]) at randomly selected (\[Theta], \[Phi])'s for l=0,...,100: "RealBasisTest_T.txt" (for T), "RealBasisTest_O.txt" (for O), and "RealBasisTest_I.txt" (for I).
 (*File format: a line of 'l' value, a line of 'p' value, and then a line of '{(\[Theta], \[Phi]}   {F}_{l}^p(\[Theta], \[Phi])'.*)
 
- 
 III. Obtain real basis functions in MATLAB:
 MATLAB functions are also developed to read the coefficients file (i.e., read_coefMat.m for "BasisCoeff_*.txt") and then to compute the real basis functions (i.e., demonstrate_get_Fplnj.m and get_Fplnj.m). 
