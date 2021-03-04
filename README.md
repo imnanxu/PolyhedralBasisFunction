@@ -1,7 +1,7 @@
 # PolyhedralBasisFunction
 Software for computing the real-valued basis function of polyhedral groups [1]. If use any part of the code, please cite this paper [1] in your work.
 
-[1] Xu, Nan, and Peter C. Doerschuk. "Computation of real basis functions for the 3-D rotational polyhedral groups T, O, and I." arXiv preprint arXiv:1701.01348 (2017).
+[1] Xu, Nan, and Peter C. Doerschuk. "Computation of real-valued basis functions which transform as irreducible representations of the polyhedral groups." arXiv preprint arXiv:1701.01348 (2017).
 
 I. Software for computing the real irrep matrices and real basis functions:
 Three MATHEMATICA software packages (i.e., RealIrrepBasisT.m, RealIrrepBasisO.m, and RealIrrepBasisI.m) were developed for computing the real irrep matrices as well as the spherical harmonics coefficients c_{p,l,n,j,m} (Eq. 6.1) which define the real basis functions in terms of spherical harmonics for the three polyhedral groups. The following computations can be performed:
