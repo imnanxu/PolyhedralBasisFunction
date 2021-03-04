@@ -1,7 +1,11 @@
 # PolyhedralBasisFunction
-Matlab and Mathematica Software for computing the complete basis function for the article [1]. If use any part of the code, please cite this paper [1] in your work.
+Software for computing the real-valued basis function of polyhedral groups [1]. If use any part of the code, please cite this paper [1] in your work.
 
 [1] Xu, Nan, and Peter C. Doerschuk. "Computation of real basis functions for the 3-D rotational polyhedral groups T, O, and I." arXiv preprint arXiv:1701.01348 (2017).
+
+I. Software for computing the real irrep matrices and real basis functions
+Software packages in \emph{Mathematica} were developed for computing the real irrep matrices as well as the spherical harmonics coefficients $c_{p,l,n,j,m}$ (Eq. 6.1) which define the real basis functions in terms of spherical harmonics for the three polyhedral groups. Specific software programs and functions for each group are listed in Table SM1. Finally, the real basis functions can be obtained by multiplying each row of $\boldsymbol{\hat\calH}_{l}^{p}$ by the spherical harmonics vector (i.e., \texttt{Table[SphericalHarmonicY[l,m,$\theta$,$\phi$],\{m,-l,l\}]} in \emph{Mathematica}). Please see the notebook file ``\textsf{\url{Main.nb}}'' for the tutorial of calling these packages to generate real basis function for each polyhedral group. 
+
 
 I. Software in Mathematica has been written to compute the real irrep matrices and then the spherical harmonics coeffcients ${\hat\calH}_{l,n}^p$ in [1, Eq. 6.10] which define the symmetrical basis in terms of spherical harmonics for these three groups.
 1. For icosahedral group I: In sequence,
