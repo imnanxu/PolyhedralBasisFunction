@@ -22,3 +22,5 @@ Note that the solution of real irrep matrices and coefficients are not unique as
 
 III. Obtain real basis functions in MATLAB:\
 MATLAB functions are also developed to read the coefficients file (i.e., read_coefMat.m for "BasisCoeff_*.txt") and then to compute the real basis functions (i.e., demonstrate_get_Fplnj.m and get_Fplnj.m). 
+
+(Modified by Nan Xu on March 5, 2021.)
