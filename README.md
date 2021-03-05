@@ -9,7 +9,7 @@ Please see the notebook file "Main.nb" for the tutorial of calling relavent pack
  2. Non-orthogonized coefficients matrix \hat{D}_{l,m}^p  (Eq. 6.10, [1])
  3. Spherical harmonics coefficients matrix, \hat{H}_l^p=((\hat{H}_{l,1}^p)^T, ..., (\hat{H}_{l,Npl}^p)^T)^T  (Eq. 6.11, [1])
 
-The final real basis functions can be obtained by multiplying each row of \boldsymbol{\hat\calH}_{l}^{p} by the spherical harmonics vector (i.e., Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}] in MATHEMATICA). 
+The final real basis functions can be obtained by multiplying each row of \boldsymbol{\hat\calH}_{l}^{p} by the spherical harmonics vector (i.e., Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}] in MATHEMATICA). All programs were tested by MATHEMATICA v12.2.
 
 II. Numerical solution:\
 Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included ("*_T.txt" for the tetrahedral group, "*_O.txt" for the octahedral group, and "*_I.txt" for the icosahedral group):
