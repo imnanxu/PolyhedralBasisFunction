@@ -147,11 +147,8 @@ BasisFunctionMatrixT[l_,m_,p_]:=(Matrix=SparseArray[{},{dimT[[p]],2l+1}]; n=0;
 	If[n!=0, 
 		Matrix[[n,All]]=Table[\[CapitalDelta]t[l,mp,m,p,n,n],{mp,-l,l}];
 		For[np=1,np<=dimT[[p]],np++, 
-			If[np!=n,
-				Matrix[[np,All]]=Table[\[CapitalDelta]t[l,mp,m,p,np,n],{mp,-l,l}],
-				Continue[]
-			]
-		],
+			If[np!=n, Matrix[[np,All]]=Table[\[CapitalDelta]t[l,mp,m,p,np,n],{mp,-l,l}], Continue[]]
+		];
 	(*cn=0*)];
 	Normal[Matrix])
 BasisRealFunctionCoeffMatrixT[l_,m_,p_]:=(Mat=BasisFunctionMatrixT[l,m,p];

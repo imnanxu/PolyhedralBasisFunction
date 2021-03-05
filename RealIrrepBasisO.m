@@ -384,7 +384,7 @@ BasisFunctionMatrixO[l_,m_,p_]:=(Matrix=SparseArray[{},{dimO[[p]],2l+1}]; n=0;
 				Matrix[[np,All]]=Chop[Table[\[CapitalDelta]o[l,mp,m,p,np,n],{mp,-l,l}],\[Epsilon]],
 				Continue[]
 			]
-		],
+		];
 	(*cn=0*)];
 	Normal[Matrix])
 BasisRealFunctionCoeffMatrixO[l_,m_,p_]:=(Mat=BasisFunctionMatrixO[l,m,p];
