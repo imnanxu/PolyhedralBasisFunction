@@ -1,4 +1,4 @@
-function [tildeb, space_check, ls, Ips]=read_coefMat(b_fn, lmax, nIp)
+function [tildeb, ls, Ips, realbasisL]=read_coefMat(b_fn, lmax, nIp)
 %Input:
 % b_fn: the file name of tildeb data file. The file should have the format
 % below:
@@ -20,11 +20,16 @@ function [tildeb, space_check, ls, Ips]=read_coefMat(b_fn, lmax, nIp)
 % includes a matrix of basis coefficient matrix. Row of the 
 % matrix is the vector of basis coefficient for m=-l,...,l.
 %
-% space_check: a (lmax+1) X 1 vector to test if the total number of basis
-% function under certain l span the whole space: (0, yes; 1 no.)
-%
 % ls: a vector of list of all ls 
 % Ips: a vector of list of all Ips
+%
+% realbasisL: a (lmax+1) X 3 matrix to test if the total number of basis
+% function under certain l span the whole space: 
+%     the 1st column: the number of basis functions needed to span the
+%     space of l
+%     the 2nd column: the number of real basis functions under l
+%     the 3rd column: if the 1st column == the 2nd column, then 0;
+%     otherwise, 0.
 %
 % Test:
 % b_fn='BasisCoeff_T.txt'; lmax=30; nIp=4;
@@ -33,7 +38,8 @@ function [tildeb, space_check, ls, Ips]=read_coefMat(b_fn, lmax, nIp)
 % modified by Nan Xu on 03/02/2021
 
 tildeb=cell(lmax+1, nIp); %lmax+1-->l, nIp-->p, nmax-->given l, each Ip has n basis, 2l
-space_check=zeros(lmax+1,1);
+%space_check=zeros(lmax+1,1);
+realbasisL=zeros(lmax+1,3); realbasisL(1:lmax+1,1)=2*[0:lmax]'+1;
 [fid,fopenmsg]=fopen(b_fn,'r');
 if fid == -1
   error(['read_coefficients: fid ' num2str(fid) ' fopenmsg ' fopenmsg ' opening ' b_fn]);
@@ -57,6 +63,7 @@ while ~feof(fid)
     n=0;  
     
     tline = fgetl(fid); tildeb_curv=eval(tline); Nlp=size(tildeb_curv,2);
+    realbasisL(rd_l1+1,2)=realbasisL(rd_l1+1,2)+Nlp;
     tildeb_curm=zeros(Nlp,2*rd_l1+1);
     for j=1:Nlp
         tildeb_curm(j,:)=cell2mat(tildeb_curv{j});
@@ -72,7 +79,7 @@ while ~feof(fid)
     end
     
     if n~=2*rd_l1+1
-        space_check(rd_l1+1)=1;
+        realbasisL(rd_l1+1,3)=1;
     end
 end
 fclose(fid);
