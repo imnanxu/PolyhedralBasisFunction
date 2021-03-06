@@ -12,8 +12,8 @@ Please see the MATHEMATICA notebook file "Main.nb" for the tutorial of calling r
 The final real basis functions can be obtained by multiplying each row of \boldsymbol{\hat\calH}_{l}^{p} by the spherical harmonics vector (i.e., Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}] in MATHEMATICA). All programs were tested in MATHEMATICA v12.2.
 
 II. Numerical solutions:\
-Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included ("*_T.txt" for the tetrahedral group, "*_O.txt" for the octahedral group, and "*_I.txt" for the icosahedral group):
- 1. Real irrep matrices: "RealIrreps_T.txt", "RealIrreps_O.txt", and "RealIrreps_I.txt"\
+Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included ("*_T.zip" for the tetrahedral group, "*_O.zip" for the octahedral group, and "*_I.zip" for the icosahedral group). The following three files are included each .zip folder.
+ 1. Real irrep matrices: "RealIrreps_*.txt", "RealIrreps_O.txt", "RealIrreps_I.txt"\
 (*A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} has the form of {{a,b},{c,d}} in these files.*)
  2. Spherical harmonics coeffcients matrix \hat{H}_l^p: "BasisCoeff_T.txt" (0<=l<=100), "BasisCoeff_O.txt" (0<=l<=60), "BasisCoeff_I.txt" (0<=l<=100)\
 (*File format: a line of 'l' value, a line of 'p' value, and then a line of coefficient matrix '\hat{H}_l^p'.*)
