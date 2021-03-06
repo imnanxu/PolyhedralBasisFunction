@@ -6,7 +6,7 @@ Software for computing the real-valued basis function of polyhedral groups [1]. 
 I. Software for computing the real irrep matrices and real basis functions:\
 Please see the MATHEMATICA notebook file "Main.nb" for the tutorial of calling relavent packages to generate real basis function of each polyhedral group. Three MATHEMATICA software packages (i.e., RealIrrepBasisT.m, RealIrrepBasisO.m, and RealIrrepBasisI.m) were developed for computing the real irrep matrices as well as the spherical harmonics coefficients c_{p,l,n,j,m} (Eq. 6.1) which define the real basis functions in terms of spherical harmonics for the three polyhedral groups. The following computations can be performed:
  1. The complex and the equivalent real irrep matrix, \Gamma_c^p and \Gamma_r^p (Eq. 5.1, [1])
- 2. Non-orthogonized coefficients matrix \hat{D}_{l,m}^p  (Eq. 6.10, [1])
+ 2. Non-orthogonized coefficients matrix \hat{D}<ins> </ins>{l,m}^p  (Eq. 6.10, [1])
  3. Spherical harmonics coefficients matrix, \hat{H}_{l}_^p=((\hat{H}_{l,1}^p)^T, ..., (\hat{H}_{l,Npl}^p)^T)^T  (Eq. 6.11, [1])
 
 The final real basis functions can be obtained by multiplying each row of \boldsymbol{\hat\calH}_{l}^{p} by the spherical harmonics vector (i.e., Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}] in MATHEMATICA). All programs were tested in MATHEMATICA v12.2.
