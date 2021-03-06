@@ -12,17 +12,17 @@ Please see the MATHEMATICA notebook file "Main.nb" for the tutorial of calling r
  ### 3. Spherical harmonics coefficients matrix
      $\hat{H}_l^p$=((\hat{H}_{l,1}^p)^T, ..., (\hat{H}_{l,Npl}^p)^T)^T  (Eq. 6.11, [1])
 
-All programs were tested in MATHEMATICA v12.2. The final real basis functions can be obtained by multiplying each row of $\hat{H}_l^p$ by the spherical harmonics vector (i.e., `<Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}]>` in MATHEMATICA). 
+All programs were tested in MATHEMATICA v12.2. The final real basis functions can be obtained by multiplying each row of $\hat{H}_l^p$ by the spherical harmonics vector (i.e., `Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}]` in MATHEMATICA). 
 
 ## II. Numerical solutions
 Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included ("sol_T.zip" for the tetrahedral group, "sol_O.zip" for the octahedral group, and "sol_I.zip" for the icosahedral group). The following three files are included in each "_*.zip" folder.
- ### 1. Real irrep matrices: "RealIrreps<ins> </ins>*.txt"
+ ### 1. Real irrep matrices: "RealIrreps_*.txt"
      A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} has the form of {{a,b},{c,d}} in all these files.
- ### 2. Spherical harmonics coeffcients matrix \hat{H}<ins> </ins>l^p for 0<=l<=100: "BasisCoeff<ins> </ins>*.txt"
+ ### 2. Spherical harmonics coeffcients matrix `\hat{H}_l^p` for 0<=l<=100: "BasisCoeff<ins> </ins>*.txt"
      File format: a line of '$l$' value
                   a line of '$p$' value
                   a line of coefficient matrix '$\hat{H}_l^p$'
- ### 3. Real basis functions F<ins> </ins>l^p(\theta, \phi) (Eq. 6.11, [1]) at randomly selected (\[Theta], \[Phi]): "RealBasisTest<ins> </ins>*.txt"
+ ### 3. Real basis functions `F_l^p` (Eq. 6.11, [1]) at randomly selected `(\[Theta], \[Phi])`: "RealBasisTest_*.txt"
      File format: a line of '$l$' value
                   a line of '$p$' value
                   a line of '{$\theta$, $\phi$}     $F_l^p(\theta, \phi)$'
