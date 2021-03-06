@@ -12,7 +12,7 @@ Please see the MATHEMATICA notebook file "Main.nb" for the tutorial of calling r
  ### 3. Spherical harmonics coefficients matrix
      $\hat{H}_l^p$=((\hat{H}_{l,1}^p)^T, ..., (\hat{H}_{l,Npl}^p)^T)^T  (Eq. 6.11, [1])
 
-The final real basis functions can be obtained by multiplying each row of \boldsymbol{\hat\calH}_{l}^{p} by the spherical harmonics vector (i.e., Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}] in MATHEMATICA). All programs were tested in MATHEMATICA v12.2.
+All programs were tested in MATHEMATICA v12.2. The final real basis functions can be obtained by multiplying each row of $\hat{H}_l^p$ by the spherical harmonics vector (i.e., `<Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}]>` in MATHEMATICA). 
 
 ## II. Numerical solutions
 Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included ("sol_T.zip" for the tetrahedral group, "sol_O.zip" for the octahedral group, and "sol_I.zip" for the icosahedral group). The following three files are included in each "_*.zip" folder.
