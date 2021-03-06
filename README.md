@@ -28,7 +28,7 @@ Note that the solution of real irrep matrices and coefficients are not unique as
      File format: a line of '$l$' value
                   a line of '$p$' value
                   a line of '{$\theta$, $\phi$}     $F_l^p(\theta, \phi)$'
-  Note: For testing purposes, only one pair of angles `(\[Theta], \[Phi])` was selected for testing the realness of the basis functions for the whole coeffcients matrix `\hat{H}_l^p`. In practice, one can select different `(\[Theta], \[Phi])`s for different rows of `\hat{H}_l^p`. See the three testing code in the notebook file "Main.nb".
+  Note: For testing purposes, only one pair of angles `(\[Theta], \[Phi])` was selected for testing the realness of the basis functions for the whole coeffcients matrix `\hat{H}_l^p`. In practice, one can select different `(\[Theta], \[Phi])`'s for different rows of `\hat{H}_l^p`. See the three testing code in the notebook file "Main.nb".
 
 ## III. Obtain real basis functions in MATLAB
 MATLAB functions are also developed to read the coefficients file (i.e., read_coefMat.m for "BasisCoeff_*.txt") and then to compute the real basis functions (i.e., demonstrate_get_Fplnj.m and get_Fplnj.m).
