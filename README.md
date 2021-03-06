@@ -10,7 +10,7 @@ Please see the MATHEMATICA notebook file "Main.nb" for the tutorial of calling r
  ### 2. Non-orthogonized coefficients matrix 
      $\hat{D}_{l,m}^p$  (Eq. 6.10, [1])
  ### 3. Spherical harmonics coefficients matrix
-     $\hat{H}_l^p$=((\hat{H}_{l,1}^p)^T, ..., (\hat{H}_{l,Npl}^p)^T)^T  (Eq. 6.11, [1])
+     $\hat{H}_l^p=((\hat{H}_{l,1}^p)^T, ..., (\hat{H}_{l,Npl}^p)^T)^T$  (Eq. 6.11, [1])
 
 All programs were tested in MATHEMATICA v12.2. The final real basis functions can be obtained by multiplying each row of $\hat{H}_l^p$ by the spherical harmonics vector (i.e., `Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}]` in MATHEMATICA). 
 
