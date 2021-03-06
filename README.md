@@ -24,7 +24,7 @@ Note that the solution of real irrep matrices and coefficients are not unique as
                   a line of coefficient matrix '$\hat{H}_l^p$'
   Note: The `d_p*n+j`th row in `\hat{H}_l^p` includes the coefficients `{c_{p,l,n,j,m}}_{m=-l}^{m=l}` (Eq. 6.1, [1]) for `n=1,...,Npl`. 
 
- ### 3. Real basis functions `F_l^p` (Eq. 6.11, [1]) at randomly selected `(\[Theta], \[Phi])`: "RealBasisTest_*.txt"
+ ### 3. Real basis functions `F_l^p` (Eq. 6.11, [1]) at a randomly selected `(\[Theta], \[Phi])`: "RealBasisTest_*.txt"
      File format: a line of '$l$' value
                   a line of '$p$' value
                   a line of '{$\theta$, $\phi$}     $F_l^p(\theta, \phi)$'
