@@ -14,13 +14,17 @@ The final real basis functions can be obtained by multiplying each row of \bolds
 ## II. Numerical solutions
 Note that the solution of real irrep matrices and coefficients are not unique as described in [1]. One solution for each group is included ("sol_T.zip" for the tetrahedral group, "sol_O.zip" for the octahedral group, and "sol_I.zip" for the icosahedral group). The following three files are included in each .zip folder.
  ### 1. Real irrep matrices: "RealIrreps<ins> </ins>*.txt"
-     A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} has the form of {{a,b},{c,d}} in these files.
+     A 2-dim matrix with the 1st row {a, b} and 2nd row {c, d} has the form of {{a,b},{c,d}} in all these files.
  ### 2. Spherical harmonics coeffcients matrix \hat{H}<ins> </ins>l^p for 0<=l<=100: "BasisCoeff<ins> </ins>*.txt"
-     File format: a line of 'l' value, a line of 'p' value, and then a line of coefficient matrix '\hat{H}_l^p'.
+     File format: a line of '$l$' value\
+                  a line of '$p$' value\
+                  a line of coefficient matrix '$\hat{H}_l^p$'
  ### 3. Real basis functions F<ins> </ins>l^p(\[Theta], \[Phi]) (Eq. 6.11, [1]) at randomly selected (\[Theta], \[Phi]): "RealBasisTest<ins> </ins>*.txt"
-     File format: a line of 'l' value, a line of 'p' value, and then a line of '{\[Theta], \[Phi]}     F<ins> </ins>l^p(\[Theta], \[Phi])'.
+     File format: a line of '$l$' value\
+                  a line of '$p$' value\
+                  a line of '{$\theta$, $\phi$}     F<ins> </ins>l^p(\[Theta], \[Phi])'
 
-## III. Obtain real basis functions in MATLAB:\
+## III. Obtain real basis functions in MATLAB
 MATLAB functions are also developed to read the coefficients file (i.e., read_coefMat.m for "BasisCoeff_*.txt") and then to compute the real basis functions (i.e., demonstrate_get_Fplnj.m and get_Fplnj.m). 
 
 (Modified by Nan Xu on March 5, 2021.)
