@@ -665,24 +665,22 @@ powerFunc=Unevaluated[#1^#2]/.HoldPattern[0^0]:>1&;
 d[l_,mp_,m_,\[Beta]_]:=Sqrt[(l+m)!*(l-m)!*(l+mp)!*(l-mp)!]*Sum[(-1)^k/((l-mp-k)!*(l+m-k)!*(k+mp-m)!*k!)*powerFunc[(Cos[\[Beta]/2]),(2l+m-mp-2k)]*powerFunc[(-Sin[\[Beta]/2]),(mp-m+2k)],{k,Max[0,(m-mp)],Min[(l-mp),(l+m)]}]
 Dwig[l_,mp_,m_,\[Alpha]_,\[Beta]_,\[Gamma]_]:=Exp[-I*mp*\[Alpha]]*d[l,mp,m,\[Beta]]*Exp[-I*m*\[Gamma]]
 (*Group Projection Operator*)
-\[CapitalDelta][l_,mp_,m_,p_,i_,j_]:=dim[[p]]/Ng*Sum[ (Conjugate[\[CapitalGamma]r[p,g][[i,j]]])*WignerD[{l, mp, m}, -\[Alpha]zd[[g]], -\[Beta]zd[[g]],-\[Gamma]zd[[g]]],{g,Ng}]
+(*\[CapitalDelta][l_,mp_,m_,p_,i_,j_]:=dim[[p]]/Ng*Sum[ (Conjugate[\[CapitalGamma]r[p,g][[i,j]]])*WignerD[{l, mp, m}, -\[Alpha]zd[[g]], -\[Beta]zd[[g]],-\[Gamma]zd[[g]]],{g,Ng}]*)
 (*\[CapitalDelta][l_,mp_,m_,p_,i_,j_]:=dim[[p]]/Ng*Sum[ (Conjugate[\[CapitalGamma][p,g][[i,j]]])*WignerD[{l, mp, m}, \[Gamma]zd[[g]], \[Beta]zd[[g]], \[Alpha]zd[[g]]],{g,Ng}] *)
-(*\[CapitalDelta][l_,mp_,m_,p_,i_,j_]:=dim[[p]]/Ng*Sum[ (\[CapitalGamma]r[p,g][[i,j]])*Dwig[l,mp,m,\[Alpha]zd[[g]],\[Beta]zd[[g]],\[Gamma]zd[[g]]],{g,Ng}] Tested finally-Oct 12, 2014 !!!*)
+\[CapitalDelta][l_,mp_,m_,p_,i_,j_]:=dim[[p]]/Ng*Sum[ (\[CapitalGamma]r[p,g][[i,j]])*Dwig[l,mp,m,\[Alpha]zd[[g]],\[Beta]zd[[g]],\[Gamma]zd[[g]]],{g,Ng}] (*Tested finally-Oct 12, 2014 !!!*)
 ProjOperator[l_,m_,p_,i_,j_,x_]:=Chop[Table[\[CapitalDelta][l,mp,m,p,i,j],{mp,-l,l}] . Y[x,l,Table[k,{k,-l,l}]],\[Epsilon]]
 ProjOperatorTest[l_,m_,p_,i_,j_,x_]:=dim[[p]]/Ng*Chop[Sum[Conjugate[\[CapitalGamma]r[p,g][[i,j]]]*Y[Inverse[Rzdpermute[[g,All,All]]] . x,l,m],{g,Ng}],\[Epsilon]]
 LengthProjOperator[l_,m_,p_,n_]:=Chop[Sum[Abs[\[CapitalDelta][l,mp,m,p,n,n]]^2,{mp, -l,l}],\[Epsilon]]
-BasisFunctionMatrix[l_,m_,p_]:=(Matrix=SparseArray[{},{dim[[p]],2l+1}]; n=0;
+BasisFunctionMatrix[l_,m_,p_]:=(\[Epsilon]=10^(-14);Matrix=SparseArray[{},{dim[[p]],2l+1}]; n=0;
 	For[k=1,k<=dim[[p]],k++, 
 		cn=LengthProjOperator[l,m,p,k];
 		If[cn!=0,n=k; Break[]]
 	];
 	If[n!=0, 
-		(*Matrix[[n,All]]=Chop[Table[\[CapitalDelta][l,mp,m,p,n,n],{mp,-l,l}]/cn,\[Epsilon]];*)
-		Matrix[[n,All]]=Table[\[CapitalDelta][l,mp,m,p,n,n],{mp,-l,l}]/cn;
+		Matrix[[n,All]]=Chop[Table[\[CapitalDelta][l,mp,m,p,n,n],{mp,-l,l}]/cn,\[Epsilon]];
 		For[np=1,np<=dim[[p]],np++, 
 			If[np!=n,
-				(*Matrix[[np,All]]=Chop[Table[\[CapitalDelta][l,mp,m,p,np,n],{mp,-l,l}]/cn,\[Epsilon]],*)
-				Matrix[[np,All]]=Table[\[CapitalDelta][l,mp,m,p,np,n],{mp,-l,l}]/cn,
+				Matrix[[np,All]]=Chop[Table[\[CapitalDelta][l,mp,m,p,np,n],{mp,-l,l}]/cn,\[Epsilon]],
 				Continue[]
 			]
 		],
@@ -695,27 +693,16 @@ BasisRealFunctionCoeffMatrixI[l_,m_,p_]:=(Mat=BasisFunctionMatrix[l,m,p];
 		For[i=1,i<=Length[rh],i++,If[lh[[i]]==0,Continue[],Break[]];];
 		If[i<= Length[rh], angle=Log[rh[[i]]/lh[[i]]]/2];
 	MatNew=Exp[angle]*Mat)
-	
+
 (*Below were added on Mar 02, 2021*)
-BasisRealFunctionOthoCoeffMatrixI[l_,p_]:=(Mat0={};
-	(*WriteString["stdout", "l=",l,", p=", p, ", m={"];*)
+BasisRealFunctionOthoCoeffMatrixI[l_,p_]:=(Mat1={};
 	For[m=-l, m<=l, m++,
 		Mattest=BasisRealFunctionCoeffMatrixI[l, m, p];
-		(*WriteString["stdout", m, " "];*)
-		(*Print[{m,timeCur[[1]]}]*)
-		Mat0=Join[Mat0, Mattest];
-	]; (*WriteString["stdout", "}\n"];*)
-	(*Mat0orth=Select[Orthogonalize[N[Mat0,precisionN]],#!=ConstantArray[0,2*(l)+1]&]*)
-	Mat0orth=Select[Orthogonalize[Chop[Mat0*1.0,\[Epsilon]]],#!=ConstantArray[0,2*(l)+1]&]
+		AppendTo[Mat1,ArrayReshape[Mattest,{dim[[p]]*(2l+1)}]];
+	];	
+	Mat1oth=Select[Chop[Orthogonalize[Chop[Mat1]]],#!=ConstantArray[0,dim[[p]]*(2l+1)]&];
+	Mat1oth=ArrayReshape[Mat1oth,{dim[[p]],2l+1}]
 	)
-RealBasisFunctionsI[l_,p_,\[Theta]_,\[Phi]_]:=(
-	CoeffMat=BasisRealFunctionOthoCoeffMatrixI[l,p];
-	If[Dimensions[CoeffMat]!={0},
-		y=Table[SphericalHarmonicY[l,m,\[Theta],\[Phi]],{m,-l,l}];
-		realBasis=Chop[CoeffMat . y],
-		realBasis={}
-	]
-)
 
 
 (*Test 1: generate real basis functions for the random angle*)
