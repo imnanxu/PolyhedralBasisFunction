@@ -28,7 +28,7 @@ Note that the solution of real irrep matrices and coefficients are not unique as
      File format: a line of '$l$' value
                   a line of '$p$' value
                   a line of '{$\theta$, $\phi$}     $F_l^p(\theta, \phi)$'
-  Note: For the tetrahedral group, only p=1 and p=4 irrpes lead to real basis functions. To test the completeness of the subspace determined by l degree, coefficients and complex basis functions for p=2 and 3 irreps were included in "BasisCoeff_T.txt" and "RealBasisTest_T.txt"
+  Note: For the tetrahedral group, only p=1 and p=4 irrpes lead to real basis functions. For testing the completeness of the subspace determined by l degree, complex irrep matrices, coefficients and basis functions for p=2 and 3 irreps of the tetrahedral group were also included in above three files.
  
 ## III. Obtain real basis functions in MATLAB
 MATLAB functions are also developed to read the coefficients file (i.e., read_coefMat.m for "BasisCoeff_*.txt") and then to compute the real basis functions (i.e., demonstrate_get_Fplnj.m and get_Fplnj.m).
