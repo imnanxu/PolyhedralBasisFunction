@@ -158,7 +158,7 @@ BasisRealFunctionCoeffMatrixT[l_,m_,p_]:=(Mat=BasisFunctionMatrixT[l,m,p];
 		For[i=1,i<=Length[rh],i++,If[lh[[i]]==0,Continue[],Break[]];];
 		If[i<= Length[rh], angle=Log[rh[[i]]/lh[[i]]]/2];
 	MatNew=Exp[angle]*Mat)
-BasisRealFunctionOthoCoeffMatrixT[l_,p_]:=(Mat0={};
+BasisRealFunctionOthoCoeffMatrixT[l_,p_]:=(\[Epsilon]=10^(-10); Mat0={};
 	(*WriteString["stdout", "l=",l,", p=", p, ", m={"];*)
 	For[m=-l, m<=l, m++,
 		Mattest=BasisRealFunctionCoeffMatrixT[l, m, p];
