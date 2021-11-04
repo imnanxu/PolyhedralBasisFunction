@@ -1,7 +1,7 @@
 # PolyhedralBasisFunction
 Software for computing the real-valued basis function of polyhedral groups [1]. If use any part of the code or solutions, please cite this paper [1] in your work.
 
-[1] Xu, Nan, and Peter C. Doerschuk. "Computation of real-valued basis functions which transform as irreducible representations of the polyhedral groups." SIAM Journal on Scientific Computing 2021 43:6, A3657-A3676, doi: [10.1137/20M1318183](https://epubs.siam.org/doi/abs/10.1137/20M1318183) ([arXiv:1701.01348 [math.GR]](https://arxiv.org/abs/1701.01348v2)).
+[1] Xu, Nan, and Peter C. Doerschuk. "Computation of real-valued basis functions which transform as irreducible representations of the polyhedral groups." SIAM Journal on Scientific Computing 2021 43:6, A3657-A3676, [doi:10.1137/20M1318183](https://epubs.siam.org/doi/abs/10.1137/20M1318183). ([arXiv:1701.01348 [math.GR]](https://arxiv.org/abs/1701.01348v2))
 
 
 ## I. Software for computing the real irrep matrices and real basis functions
